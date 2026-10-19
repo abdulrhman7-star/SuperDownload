@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="SuperDownload helps you save public videos from supported websites.">
+  <title>SuperDownload — Video downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/" aria-label="SuperDownload home"><span class="brand-mark">↓</span><span>Super<span class="brand-accent">Download</span></span></a>
+  <nav class="top-actions"><a href="#how" data-i18n="how">How it works</a><a href="/guides/">Guides</a><a href="/services/">Services</a><select id="language" aria-label="Language">
+    <option value="en">English</option><option value="ar">العربية</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="hi">हिन्दी</option><option value="tr">Türkçe</option><option value="ru">Русский</option><option value="id">Bahasa Indonesia</option>
+  </select></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span class="pulse"></span><span data-i18n="eyebrow">YOUR UNIVERSAL VIDEO TOOLKIT</span></div>
+    <h1 data-i18n="headline">Your videos.<br><span>Ready to save.</span></h1>
+    <p class="hero-copy" data-i18n="subhead">Paste a public video link and get started in seconds. Simple, fast, and works across your devices.</p>
+    <div class="download-panel">
+      <form id="download-form">
+        <label class="sr-only" for="video-url" data-i18n="urlLabel">Video URL</label>
+        <div class="url-row"><span class="link-icon">↗</span><input id="video-url" type="url" placeholder="Paste a video link here…" required autocomplete="url" data-i18n-placeholder="placeholder"><button id="fetch-btn" type="submit"><span data-i18n="analyze">Find video</span><span aria-hidden="true"> →</span></button></div>
+      </form>
+      <div class="supported"><span data-i18n="worksWith">Works with</span><div class="platforms"><span><b class="ig">◎</b> Instagram</span><span><b class="tt">♪</b> TikTok</span><span><b class="yt">▶</b> YouTube</span><span><b class="xlogo">𝕏</b> X</span><span><b class="fb">f</b> Facebook</span><span class="more">+ more</span></div></div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <section class="video-result" id="video-result" hidden aria-label="Video details">
+        <div class="video-meta"><img id="thumbnail" alt="" hidden><div><h2 id="video-title"></h2><p id="video-uploader"></p><p id="video-duration"></p></div></div>
+        <div class="download-controls"><label for="format" data-i18n="quality">Download quality</label><select id="format"><option value="best" data-i18n="best">Best available (MP4)</option><option value="720">Up to 720p</option><option value="480">Up to 480p</option><option value="360">Up to 360p</option><option value="mp4">MP4</option><option value="audio" data-i18n="audio">Audio only (MP3)</option></select><button id="download-btn" type="button" class="primary" data-i18n="download">Download video</button></div>
+      </section>
+    </div>
+    <p class="privacy"><span>⌁</span> <span data-i18n="privacy">No account needed. Your link is processed to retrieve the media.</span></p>
+    <div class="platform-note" data-i18n="note">Availability varies by website. Private, age-restricted, DRM-protected, or login-required content may not be supported.</div>
+  </section>
+  <section class="features" id="how">
+    <div class="section-heading"><p class="mini-label" data-i18n="simple">SIMPLE BY DESIGN</p><h2 data-i18n="whyTitle">Everything you need.<br>Nothing you don't.</h2></div>
+    <div class="feature-grid">
+      <article class="feature-card"><div class="feature-icon purple">↯</div><h3 data-i18n="f1title">Quick and easy</h3><p data-i18n="f1text">Paste a link, choose a format, and save your file. No complicated steps.</p></article>
+      <article class="feature-card"><div class="feature-icon blue">▣</div><h3 data-i18n="f2title">Made for every screen</h3><p data-i18n="f2text">A responsive experience on phones, tablets, laptops, and desktops.</p></article>
+      <article class="feature-card"><div class="feature-icon green">◎</div><h3 data-i18n="f3title">Many websites</h3><p data-i18n="f3text">Powered by yt-dlp, with support depending on the source website and its rules.</p></article>
+    </div>
+  </section>
+  <section class="steps">
+    <p class="mini-label" data-i18n="how">HOW IT WORKS</p>
+    <div class="step-list"><div><span>01</span><p data-i18n="step1">Copy the public video URL from its website.</p></div><div><span>02</span><p data-i18n="step2">Paste it above and choose Find video.</p></div><div><span>03</span><p data-i18n="step3">Choose a quality and download the file.</p></div></div>
+  </section>
+  <section class="notice"><strong data-i18n="respectTitle">Download responsibly</strong><p data-i18n="respectText">Only download content you own, have permission to save, or are otherwise legally allowed to download. Respect copyright, privacy, and each platform’s terms. SuperDownload does not bypass DRM or access controls.</p></section>
+
+  <section class="editorial-section" aria-labelledby="platform-guides-title">
+    <div class="section-heading"><p class="mini-label">LEARN BEFORE YOU DOWNLOAD</p><h2 id="platform-guides-title">Platform guides</h2><p class="section-intro">Clear, practical instructions for using public links responsibly. Availability depends on each website and its current rules.</p></div>
+    <div class="content-card-grid">
+      <a class="content-card" href="/guides/instagram.html"><span class="card-symbol ig">◎</span><h3>Instagram guide</h3><p>Where to copy a public post or reel link, and what may not work.</p><span class="read-more">Read guide →</span></a>
+      <a class="content-card" href="/guides/facebook.html"><span class="card-symbol fb">f</span><h3>Facebook guide</h3><p>Find a post link and understand public-video limitations.</p><span class="read-more">Read guide →</span></a>
+      <a class="content-card" href="/guides/tiktok.html"><span class="card-symbol tt">♪</span><h3>TikTok guide</h3><p>Copy a video URL and learn about source availability.</p><span class="read-more">Read guide →</span></a>
+      <a class="content-card" href="/guides/youtube.html"><span class="card-symbol yt">▶</span><h3>YouTube guide</h3><p>Understand links, quality choices, and copyright basics.</p><span class="read-more">Read guide →</span></a>
+      <a class="content-card" href="/guides/x.html"><span class="card-symbol xlogo">𝕏</span><h3>X guide</h3><p>Copy a post URL and learn why some media cannot be processed.</p><span class="read-more">Read guide →</span></a>
+      <a class="content-card" href="/guides/threads.html"><span class="card-symbol threads">@</span><h3>Threads guide</h3><p>Use a public post link and check support before retrying.</p><span class="read-more">Read guide →</span></a>
+    </div>
+  </section>
+  <section class="editorial-section" aria-labelledby="services-title">
+    <div class="section-heading"><p class="mini-label">TOOLS AND EXPLANATIONS</p><h2 id="services-title">Explore our services</h2><p class="section-intro">Learn what each option does, how to choose it, and which limitations to expect.</p></div>
+    <div class="content-card-grid service-grid">
+      <a class="content-card" href="/services/video-downloader.html"><span class="card-symbol">↓</span><h3>Video downloader</h3><p>Check a public link, review the available details, and choose a supported output.</p><span class="read-more">Explore service →</span></a>
+      <a class="content-card" href="/services/audio-extraction.html"><span class="card-symbol">♫</span><h3>Audio extraction</h3><p>Learn about MP3 output, conversion limits, and audio-only downloads.</p><span class="read-more">Explore service →</span></a>
+      <a class="content-card" href="/services/quality-formats.html"><span class="card-symbol">▤</span><h3>Quality and formats</h3><p>Understand resolution, file types, size, and playback compatibility.</p><span class="read-more">Explore service →</span></a>
+      <a class="content-card" href="/services/supported-sites.html"><span class="card-symbol">◎</span><h3>Supported websites</h3><p>Learn why support differs by platform, post, region, and time.</p><span class="read-more">Explore service →</span></a>
+    </div>
+  </section>
+  <section class="editorial-section trust-section">
+    <div class="section-heading"><p class="mini-label">ABOUT THIS PROJECT</p><h2>Simple tools, clear limits</h2><p class="section-intro">SuperDownload is an independent utility. We explain how the tool works, what may fail, and why users should respect creators’ rights and platform rules.</p></div>
+    <div class="trust-links"><a href="/about.html">About SuperDownload</a><a href="/faq.html">Frequently asked questions</a><a href="/terms.html">Terms of use</a><a href="/privacy.html">Privacy policy</a><a href="/contact.html">Contact and report an issue</a></div>
+  </section>
+
+  </main>
+<footer><a class="brand small-brand" href="/"><span class="brand-mark">↓</span><span>Super<span class="brand-accent">Download</span></span></a><span>© <span id="year"></span> SuperDownload</span><nav class="footer-links"><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/guides/">Guides</a><a href="/services/">Services</a></nav></footer>
+</body></html>
